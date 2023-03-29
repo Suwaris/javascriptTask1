@@ -1,0 +1,29 @@
+.avatar {
+    border-radius: 50%;
+    width: 250px;
+    height: auto;
+
+}
+
+.gitname {
+    text-align: justify;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 30px;
+}
+
+.gitUname {
+    text-align: justify;
+    font-style: normal;
+    font-size: 30px;
+}
+
+.data{
+    text-align: left;
+    
+}
+
+#userIcon {
+    padding: .5em;
+    display: inline-block;
+}
