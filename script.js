@@ -8,7 +8,7 @@ form.addEventListener('submit',function(e){
     var originalName = search.split(' ').join('')
     alert(originalName)
 
-    fetch(`https://api.github.com/users?q=$(originalName)`)
+    fetch(`https://api.github.com/users?q=${originalName}`)
     .then((result) => result.json())
     .then((data) => {
         if(data.message){
