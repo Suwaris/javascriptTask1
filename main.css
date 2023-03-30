@@ -1,29 +1,87 @@
+/* body{
+    background-color: #afaeac;
+} */
+
+.container{
+    text-align: center;
+    margin-top: 50px;
+}
+
+input {
+    margin-top: 30px;
+}
+#searchUser {
+    margin-top: 20px;
+}
+
 .avatar {
     border-radius: 50%;
-    width: 250px;
+    width: 200px;
     height: auto;
+    border: 2px solid #afaeac;
 
 }
 
 .gitname {
-    text-align: justify;
+    text-align: center;
     font-weight: bold;
     font-style: normal;
     font-size: 30px;
 }
 
 .gitUname {
-    text-align: justify;
+    text-align: center;
     font-style: normal;
     font-size: 30px;
+    /* display: inline-block; */
 }
 
 .data{
-    text-align: left;
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+    gap: 10px;  
+}
+
+.data p {
+    margin: 20px;
+}
+
+.location{
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    
+}
+
+.bio{
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+    gap: 10px;
     
 }
 
 #userIcon {
     padding: .5em;
     display: inline-block;
+}
+
+.detailBox {
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.5s;
+    border-radius: 5px;
+    margin-top: 50px;
+    background-color: snow;
+}
+
+img {
+    border: 10px solid transparent;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.card {
+    margin-top: 20px;
 }
