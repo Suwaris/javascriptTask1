@@ -11,13 +11,13 @@ form.addEventListener('submit',function(e){
 
     var token = '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';
     var headers = new Headers();
-    headers.append('Authorization', 'Bearer ' + token);
+    // headers.append('Authorization', 'Bearer ' + token);
 
     //get user details
     fetch(`https://api.github.com/users/${originalName}?q=Q`, {
-        headers: {
-            'Authorization': `Bearer ${token}`
-        }
+        // headers: {
+        //     'Authorization': `Bearer ${token}`
+        // }
     })
     .then((result) => result.json())
     .then((data) => {
@@ -55,30 +55,26 @@ form.addEventListener('submit',function(e){
 
     //repository details
     fetch(`https://api.github.com/users/${originalName}/repos`, {
-        headers: {
-            'Authorization': `Bearer ${token}`,
-            Accept: "application/vnd.github+json"
-        }
+        // headers: {
+        //     'Authorization': `Bearer ${token}`,
+        //     Accept: "application/vnd.github+json"
+        // }
     })
-    .then((result1) => result1.json())
-    .then((result1) => console.log("error".data1))
+
+    .then((response) => response.json())
     .then((data1) => {
-        if(data1.ok){
-            document.getElementById("result1").innerHTML = `<h3>Repositories Not Found</h3>`
-        } else{
-            console.log(data1)
-            document.getElementById("result1").innerHTML = `
-            
-            <div class="card" style="width: 75%;">
-                <div class="card-body">
-                    <h5 class="card-title">Repositories</h5>
-                    <p>${data1.repos}</p>
-                </div>   
-            </div>
-            `
+        if (data1 && data1.length > 0) {
+            const repos = data1.map((repo) => `<li>${repo.name}</li>`).join("");
+            document.getElementById("response").innerHTML = `
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Repositories</h5>
+                        <ul>${repos}</ul>
+                    </div>
+                </div>
+            `;
+        } else {
+            document.getElementById("response").innerHTML = `<h3>Repositories Not Found</h3>`;
         }
-       
-    }).catch(err => {
-        console.log(err)
-    })
+    }).catch((error) => console.error(error));
 })
